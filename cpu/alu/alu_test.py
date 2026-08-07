@@ -1,4 +1,4 @@
-from alu import ALU
+from cpu.alu.alu import ALU
 
 alu = ALU()
 
