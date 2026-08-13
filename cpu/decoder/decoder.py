@@ -57,8 +57,8 @@ class Decoder:
 
         imm = (imm_4 << 12) | (imm_3 << 11) | (imm_2 << 5) | (imm_1 << 1)
 
-        if imm & (1 << 11):
-            imm -= (1 << 12)
+        if imm & (1 << 12):
+            imm -= (1 << 13)
 
         instruction = {
             "opcode": self.get_opcode(bits),
@@ -92,8 +92,8 @@ class Decoder:
 
         imm = (imm_4 << 20) | (imm_3 << 12) | (imm_2 << 11) | (imm_1 << 1)
 
-        if imm & (1 << 19):
-            imm -= (1 << 20)
+        if imm & (1 << 20):
+            imm -= (1 << 21)
 
         instruction = {
             "opcode": self.get_opcode(bits),
