@@ -1,3 +1,7 @@
+from cpu.decoder.decoder import Decoder
+
+decoder = Decoder()
+
 with open("riscv_code.txt", "w") as riscv_code:
     instructions = []
     instr = input().strip()
@@ -11,7 +15,14 @@ with open("riscv_code.txt", "w") as riscv_code:
 
 def assemble():
     with open("riscv_code.txt", "r") as riscv_code, open("machine_code.txt", "w") as machine_code:
-        pass # do not include this
+        for line in riscv_code:
+            keyword = ""
+            for char in line:
+                if char == " ":
+                    break
+                keyword += char
+
+            
     
         # TODO: writing some code here
         

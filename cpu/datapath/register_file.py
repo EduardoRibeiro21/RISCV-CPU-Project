@@ -6,16 +6,18 @@ class RegisterFile:
 
     def read(self, rs1, rs2):
         """Lê os registos rs1 e rs2."""
-        pass
+        return self.regs[rs1], self.regs[rs2]
 
     def write(self, rd, value, reg_write):
         """Escreve no registo rd se reg_write == 1 e rd != 0."""
-        pass
+        if reg_write == 1 and rd != 0:
+            self.regs[rd] = value
 
     def dump(self):
         """Opcional: imprime todos os registos para debugging."""
-        pass
+        for i, val in enumerate(self.regs):
+            print(f"x{i:02} = 0x{val:08x}")
 
     def reset(self, initial_values):
         """Opcional: recarrega os valores iniciais."""
-        pass
+        self.regs = initial_values.copy()
